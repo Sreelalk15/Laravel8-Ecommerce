@@ -64,6 +64,9 @@
 													<a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
 												</li>
 												<li class="menu-item" >
+													<a title="Dashboard" href="{{ route('admin.categories') }}">categories</a>
+												</li>
+												<li class="menu-item" >
 														<a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('form-logout').submit();">Logout</a>
 													</li>
 												<form id="form-logout" method="POST" action="{{ route('logout') }}">
@@ -151,17 +154,7 @@
 									</div>
 								</a>
 							</div>
-							@if(Cart::count() > 0)
-							<div class="wrap-icon-section minicart">
-								<a href="{{ route('product.cart') }}" class="link-direction">
-									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-									<div class="left-info">
-										<span class="index">{{ Cart::count() }} items</span>
-										<span class="title">CART</span>
-									</div>
-								</a>
-							</div>
-							@endif
+							@livewire('cart-count-component')
 							<div class="wrap-icon-section show-up-after-1024">
 								<a href="#" class="mobile-navigation">
 									<span></span>
@@ -476,7 +469,7 @@
 	<script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.flexslider.js') }}"></script>
-	<script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script>
+	<!-- <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script> -->
 	<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
